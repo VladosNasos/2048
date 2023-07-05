@@ -1,0 +1,119 @@
+﻿<Window x:Class="_2048.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="2048" Height="400" Width="400" KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <Style x:Key="Tile0" TargetType="TextBlock">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="Tile2" TargetType="TextBlock">
+            <Setter Property="Background" Value="#EEE4DA"/>
+            <Setter Property="Foreground" Value="#776E65"/>
+        </Style>
+        <Style x:Key="Tile4" TargetType="TextBlock">
+            <Setter Property="Background" Value="#EDE0C8"/>
+            <Setter Property="Foreground" Value="#776E65"/>
+        </Style>
+        <Style x:Key="Tile8" TargetType="TextBlock">
+            <Setter Property="Background" Value="#F2B179"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile16" TargetType="TextBlock">
+            <Setter Property="Background" Value="#F59563"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile32" TargetType="TextBlock">
+            <Setter Property="Background" Value="#F67C5F"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile64" TargetType="TextBlock">
+            <Setter Property="Background" Value="#F65E3B"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile128" TargetType="TextBlock">
+            <Setter Property="Background" Value="#EDCF72"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile256" TargetType="TextBlock">
+            <Setter Property="Background" Value="#EDCC61"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile512" TargetType="TextBlock">
+            <Setter Property="Background" Value="#EDC850" />
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile1024" TargetType="TextBlock">
+            <Setter Property="Background" Value="#EDC53F"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="Tile2048" TargetType="TextBlock">
+            <Setter Property="Background" Value="#EDC22E"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="BoardGrid" Background="#D8D8D8">
+        <Grid x:Name="Board1Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_00" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_01" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="0" Grid.Column="2" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_02" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="0" Grid.Column="3" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_03" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="1" Grid.Column="0" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_10" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_11" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="1" Grid.Column="2" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_12" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="1" Grid.Column="3" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_13" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="2" Grid.Column="0" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_20" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="2" Grid.Column="1" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_21" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="2" Grid.Column="2" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_22" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="2" Grid.Column="3" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_23" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="3" Grid.Column="0" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_30" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="3" Grid.Column="1" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_31" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="3" Grid.Column="2" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_32" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+            <Border Grid.Row="3" Grid.Column="3" BorderBrush="#A5A5A5" BorderThickness="7">
+            <TextBlock x:Name="tile_33" Style="{StaticResource Tile0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        </Border>
+    </Grid>
+    </Grid>
+</Window>
