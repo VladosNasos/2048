@@ -43,20 +43,20 @@ namespace _2048
                 for (int col = 0; col < BoardSize; col++)
                 {
                     int value = board[row, col];
-                    TextBlock tile = GetTile(row, col);
-                    tile.Text = value > 0 ? value.ToString() : "";
-                    tile.Style = GetTileStyle(value);
+                    Button button = GetButton(row, col);
+                    button.Content = value > 0 ? value.ToString() : "";
+                    button.Style = GetButtonStyle(value);
                 }
             }
         }
 
-        private TextBlock GetTile(int row, int col)
+        private Button GetButton(int row, int col)
         {
-            string tileName = "tile_" + row + col;
-            return (TextBlock)LogicalTreeHelper.FindLogicalNode(BoardGrid, tileName);
+            string buttonName = "button_" + row + col;
+            return (Button)LogicalTreeHelper.FindLogicalNode(BoardGrid, buttonName);
         }
 
-        private Style GetTileStyle(int value)
+        private Style GetButtonStyle(int value)
         {
             string styleName = "Tile" + value;
             return (Style)Resources[styleName];
@@ -68,11 +68,11 @@ namespace _2048
 
             for (int r = 0; r < BoardSize; r++)
             {
-                for (int cock = 0; cock < BoardSize; cock++)
+                for (int c = 0; c < BoardSize; c++)
                 {
-                    if (board[r, cock] == 0)
+                    if (board[r, c] == 0)
                     {
-                        emptyCells.Add(r * BoardSize + cock);
+                        emptyCells.Add(r * BoardSize + c);
                     }
                 }
             }
@@ -88,7 +88,7 @@ namespace _2048
             int row = cell / BoardSize;
             int col = cell % BoardSize;
 
-            board[row, col] = random.Next(1, 3) * 2; // Generates 2 or 4
+            board[row, col] = random.Next(1, 3) * 2;
         }
 
         private void Move(Direction direction)
